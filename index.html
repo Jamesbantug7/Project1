@@ -1,18 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLACEHOLDER</title>
-    <!-- <link rel="icon" href="PLACEHOLDER" type="image/gif" -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipe Studio</title>
+  <meta name="description" content="Collect and cook your favorite recipes.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>PLACEHOLDER</h1>
-
-    <div id="content">
-        
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Recipe Studio</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="recipe.html">Featured</a></li>
+          <li><a href="about.html">About &amp; Contact</a></li>
+        </ul>
+      </nav>
     </div>
-        
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <h1 id="hero-title">The easiest way to cook your favorite recipes</h1>
+        <p>Recipe Studio is a simple, readable place to browse recipes and follow them step by step.</p>
+        <div class="actions">
+          <a class="btn btn--dark" href="recipes.html">Browse all recipes</a>
+          <a class="btn btn--dark" href="recipe.html">See a featured recipe</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="featured-title">
+      <div class="container">
+        <h2 id="featured-title">Featured recipes</h2>
+        <div class="grid">
+        <article class="card">
+          <div class="card__tile">Pasta</div>
+          <div class="card__body">
+            <p class="muted">20 min - Beginner</p>
+            <h3>Lemon Garlic Spaghetti</h3>
+            <p>Bright, silky and made in one pot.</p>
+            <a class="btn" href="recipe.html">View recipe</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tile">Quick</div>
+          <div class="card__body">
+            <p class="muted">15 min - Beginner</p>
+            <h3>Garlic Butter Shrimp Toast</h3>
+            <p>Crunchy toast and juicy shrimp with almost no cleanup.</p>
+            <a class="btn" href="recipe.html">View recipe</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tile">Rice</div>
+          <div class="card__body">
+            <p class="muted">30 min - Beginner</p>
+            <h3>Veggie Fried Rice</h3>
+            <p>Day-old rice and whatever vegetables you have.</p>
+            <a class="btn" href="recipe.html">View recipe</a>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Recipe Studio</p>
+      <nav aria-label="Footer"><ul class="nav"><li><a href="recipes.html">Recipes</a></li><li><a href="about.html">About &amp; Contact</a></li></ul></nav>
+    </div>
+  </footer>
 </body>
 </html>
