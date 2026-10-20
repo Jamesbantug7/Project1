@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #373f51;
+  background: #d8dbe2;
+}
+
+h1, h2 {
+  margin: 0 0 8px 0;
+}
+
+p {
+  margin: 0 0 12px 0;
+}
+
+a {
+  color: #373f51;
+}
+
+a:focus {
+  outline: 3px solid #1a4fd6;
+  outline-offset: 2px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  background: #ffffff;
+  padding: 8px;
+}
+
+.site-header {
+  background: #373f51;
+  border-bottom: 6px solid #58a4b0;
+}
+
+.site-header .container {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.brand {
+  float: left;
+  font-size: 28px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-header nav {
+  float: right;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  display: block;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: #a9bcd0;
+  color: #373f51;
+}
+
+.nav a[aria-current="page"] {
+  border-bottom: 3px solid #ffffff;
+}
+
+.site-header a:focus {
+  outline-color: #ffffff;
+}
+
+/* Recipe title band */
+.band {
+  background: #373f51;
+  padding: 24px 0;
+}
+
+.band h1 {
+  font-size: 44px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.band p,
+.band a {
+  color: #ffffff;
+}
+
+/* time, servings, diet, level */
+.facts {
+  margin: 12px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.facts li {
+  display: inline-block;
+  margin: 0 8px 8px 0;
+  padding: 3px 12px;
+  background: #d8dbe2;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Ingredients on the left and steps on right */
+.section {
+  padding: 40px 0;
+}
+
+.recipe section {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.recipe section:first-child {
+  width: 33%;
+  margin-right: 3%;
+}
+
+.recipe section:last-child {
+  width: 60%;
+}
+
+.recipe h2 {
+  font-size: 28px;
+}
+
+.recipe ul,
+.recipe ol {
+  padding-left: 22px;
+}
+
+.recipe li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  background: #a9bcd0;
+  border-top: 4px solid #58a4b0;
+}
+
+.site-footer .container {
+  overflow: hidden;
+}
+
+.site-footer p {
+  float: left;
+  margin: 0;
+}
+
+.site-footer nav {
+  float: right;
+}
+
+.site-footer .nav a {
+  color: #373f51;
+}
+
+.site-footer .nav a:hover {
+  background: #d8dbe2;
+}
+
+/* Tablet and phone: */
+@media (max-width: 800px) {
+  .recipe section:first-child,
+  .recipe section:last-child {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}
+
+/* Phone */
+@media (max-width: 500px) {
+  .brand,
+  .site-header nav,
+  .site-footer p,
+  .site-footer nav {
+    float: none;
+  }
+
+  .band h1 {
+    font-size: 32px;
+  }
+}
+
+/* One recipe is shown at a time */
+.recipe-page {
+  display: none;
+}
+
+.recipe-page:target {
+  display: block;
+}
+
+/* Spaghetti shows when no recipe is picked */
+#spaghetti {
+  display: block;
+}
+
+.recipe-page:target ~ #spaghetti {
+  display: none;
+}
