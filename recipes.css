@@ -82,6 +82,7 @@ a:focus {
 }
 
 .nav a {
+  transition: background 0.2s;
   display: block;
   padding: 8px 12px;
   font-size: 18px;
@@ -113,6 +114,7 @@ a:focus {
   font-size: 44px;
   font-weight: normal;
   color: #ffffff;
+  animation: slide-in 0.5s ease-out;
 }
 
 .band p {
@@ -133,6 +135,14 @@ a:focus {
   border: 1px solid #a9bcd0;
   border-radius: 8px;
   overflow: hidden;
+  animation: fade-up 0.6s ease-out both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(55, 63, 81, 0.3);
 }
 
 .card__tile {
@@ -158,10 +168,12 @@ a:focus {
   font-weight: bold;
   text-decoration: none;
   border-radius: 20px;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .btn:hover {
   background: #a9bcd0;
+  transform: translateY(-2px);
 }
 
 .site-footer {
@@ -192,6 +204,29 @@ a:focus {
   background: #d8dbe2;
 }
 
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* Tablet */
 @media (max-width: 800px) {
   .card {
@@ -215,5 +250,13 @@ a:focus {
 
   .band h1 {
     font-size: 32px;
+  }
+}
+
+/* People who ask for less motion get no animation or transitions */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

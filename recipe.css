@@ -78,6 +78,7 @@ a:focus {
 }
 
 .nav a {
+  transition: background 0.2s;
   display: block;
   padding: 8px 12px;
   font-size: 18px;
@@ -99,6 +100,10 @@ a:focus {
   outline-color: #ffffff;
 }
 
+.band a:focus {
+  outline-color: #ffffff;
+}
+
 /* Recipe title band */
 .band {
   background: #373f51;
@@ -109,6 +114,7 @@ a:focus {
   font-size: 44px;
   font-weight: normal;
   color: #ffffff;
+  animation: slide-in 0.5s ease-out;
 }
 
 .band p,
@@ -131,6 +137,7 @@ a:focus {
   border-radius: 15px;
   font-size: 14px;
   font-weight: bold;
+  animation: pop 0.4s ease-out both;
 }
 
 /* Ingredients on the left and steps on right */
@@ -194,6 +201,40 @@ a:focus {
   background: #d8dbe2;
 }
 
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Tablet and phone: */
 @media (max-width: 800px) {
   .recipe section:first-child,
@@ -222,6 +263,7 @@ a:focus {
 /* One recipe is shown at a time */
 .recipe-page {
   display: none;
+  animation: fade-up 0.5s ease-out;
 }
 
 .recipe-page:target {
@@ -235,4 +277,12 @@ a:focus {
 
 .recipe-page:target ~ #spaghetti {
   display: none;
+}
+
+/* People who ask for less motion get no animation or transitions */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
