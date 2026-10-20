@@ -178,6 +178,10 @@ label {
   transition: background 0.2s, transform 0.2s;
 }
 
+.btn {
+  padding: 2px 5px;
+}
+
 .submit-button:hover, .btn:hover {
   background: #a9bcd0;
   transform: translateY(-2px);
